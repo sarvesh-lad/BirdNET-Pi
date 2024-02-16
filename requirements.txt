@@ -1,7 +1,7 @@
 pip
 wheel
 setuptools
-tflite-runtime
+tflite_runtime-2.12.0-cp311-none-linux_aarch64.whl
 colorama==0.4.4
 librosa
 pytz
