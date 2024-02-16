@@ -1,0 +1,115 @@
++ set -e
++ my_dir=/home/sarvesh/BirdNET-Pi
++ export my_dir=/home/sarvesh/BirdNET-Pi
++ my_dir=/home/sarvesh/BirdNET-Pi
++ cd /home/sarvesh/BirdNET-Pi/scripts
+++ uname -m
++ '[' aarch64 '!=' aarch64 ']'
++ ./install_config.sh
++ set -e
++ trap 'exit 1' SIGINT SIGHUP
++ echo 'Beginning ./install_config.sh'
+Beginning ./install_config.sh
++ birdnet_conf=/home/sarvesh/BirdNET-Pi/birdnet.conf
++ LATITUDE=0.0000
++ LONGITUDE=0.0000
++ '[' -f /home/sarvesh/BirdNET-Pi/birdnet.conf ']'
++ chmod g+w /home/sarvesh/BirdNET-Pi/birdnet.conf
++ '[' -d /etc/birdnet ']'
++ sudo ln -sf /home/sarvesh/BirdNET-Pi/birdnet.conf /etc/birdnet/birdnet.conf
++ grep -ve '^#' -e '^$' /etc/birdnet/birdnet.conf
++ sudo -E HOME=/home/sarvesh USER=sarvesh ./install_services.sh
++ trap 'rm -f ${tmpfile}' EXIT
++ trap 'exit 1' SIGINT SIGHUP
+++ mktemp
++ tmpfile=/tmp/tmp.ZmeTzvsvul
++ config_file=/home/sarvesh/BirdNET-Pi/birdnet.conf
++ export USER=sarvesh
++ USER=sarvesh
++ export HOME=/home/sarvesh
++ HOME=/home/sarvesh
++ export PYTHON_VIRTUAL_ENV=/home/sarvesh/BirdNET-Pi/birdnet/bin/python3
++ PYTHON_VIRTUAL_ENV=/home/sarvesh/BirdNET-Pi/birdnet/bin/python3
++ '[' -f /home/sarvesh/BirdNET-Pi/birdnet.conf ']'
++ source /home/sarvesh/BirdNET-Pi/birdnet.conf
+++ SITE_NAME=birdnetpi
+++ LATITUDE=0.0000
+++ LONGITUDE=0.0000
+++ MODEL=BirdNET_6K_GLOBAL_MODEL
+++ SF_THRESH=0.03
+++ BIRDWEATHER_ID=
+++ CADDY_PWD=
+++ ICE_PWD=birdnetpi
+++ BIRDNETPI_URL=
+++ RTSP_STREAM=
+++ APPRISE_NOTIFICATION_TITLE='New BirdNET-Pi Detection'
+++ APPRISE_NOTIFICATION_BODY='A  ()  was just detected with a confidence of '
+++ APPRISE_NOTIFY_EACH_DETECTION=0
+++ APPRISE_NOTIFY_NEW_SPECIES=0
+++ APPRISE_WEEKLY_REPORT=1
+++ APPRISE_NOTIFY_NEW_SPECIES_EACH_DAY=0
+++ APPRISE_MINIMUM_SECONDS_BETWEEN_NOTIFICATIONS_PER_SPECIES=0
+++ APPRISE_ONLY_NOTIFY_SPECIES_NAMES=
+++ APPRISE_ONLY_NOTIFY_SPECIES_NAMES_2=
+++ FLICKR_API_KEY=
+++ FLICKR_FILTER_EMAIL=
+++ RECS_DIR=/home/sarvesh/BirdSongs
+++ REC_CARD=default
+++ PROCESSED=/home/sarvesh/BirdSongs/Processed
+++ EXTRACTED=/home/sarvesh/BirdSongs/Extracted
+++ OVERLAP=0.0
+++ CONFIDENCE=0.7
+++ SENSITIVITY=1.25
+++ FREQSHIFT_TOOL=sox
+++ FREQSHIFT_HI=6000
+++ FREQSHIFT_LO=3000
+++ FREQSHIFT_RECONNECT_DELAY=4000
+++ FREQSHIFT_PITCH=-1500
+++ CHANNELS=2
+++ FULL_DISK=purge
+++ PRIVACY_THRESHOLD=0
+++ RECORDING_LENGTH=15
+++ EXTRACTION_LENGTH=
+++ AUDIOFMT=mp3
+++ DATABASE_LANG=en
+++ HEARTBEAT_URL=
+++ SILENCE_UPDATE_INDICATOR=0
+++ RAW_SPECTROGRAM=0
+++ CUSTOM_IMAGE=
+++ CUSTOM_IMAGE_TITLE=
+++ LAST_RUN=
+++ THIS_RUN=
+++ IDFILE=/home/sarvesh/BirdNET-Pi/IdentifiedSoFar.txt
++ install_services
++ set_hostname
+++ hostname
++ '[' birdnetpi == raspberrypi ']'
++ update_etc_hosts
+++ hostname
++ sed -ie 's/$(hostname).local/birdnetpi.local   /g' /etc/hosts
++ set_login
++ '[' -d /etc/lightdm ']'
++ systemctl set-default multi-user.target
++ ln -fs /lib/systemd/system/getty@.service /etc/systemd/system/getty.target.wants/getty@tty1.service
++ cat
++ install_depends
++ apt install -y debian-keyring debian-archive-keyring apt-transport-https
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+debian-keyring is already the newest version (2022.12.24).
+debian-archive-keyring is already the newest version (2023.3+deb12u1).
+apt-transport-https is already the newest version (2.6.1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
++ curl -1sLf https://dl.cloudsmith.io/public/caddy/stable/gpg.key
++ sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+
+gpg: signal Interrupt caught ... exiting
++ curl -1sLf https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt
++ sudo tee /etc/apt/sources.list.d/caddy-stable.list
+++ exit 1
++ rm -f /tmp/tmp.ZmeTzvsvul
++ exit 1
